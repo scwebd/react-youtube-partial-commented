@@ -5,7 +5,7 @@ import React from "react";
 // times in a component as it can help you avoid lots of extra typing
 const VideoDetail = ({ video }) => {
     // when our component first mounts, we will likely not have the results back from our initial axios
-    // call to YouTube yet, meaning that the state of selectedVideo in App.js will likely be null...
+    // call to YouTube yet, meaning that the state of selectedVideo in App.js will be null...
     // that's why we include code like this block below to handle a situation when no video exists yet.
     // as soon as the inital axios results come back, App.js's state is updated with a selectedVideo
     // object and a list of video objects; since this component uses the App.js state of 'selectedVideo',
@@ -29,11 +29,12 @@ const VideoDetail = ({ video }) => {
             styling purposes */}
             <div className="embed-responsive embed-responsive-16by9">
                 {/* note the use of 'className' in lieu of 'class' to indicate CSS classes inside
-                JSX; this is necessary since 'class' is a reserved keyword in JaveScript */}
+                JSX; this is necessary since 'class' is a reserved keyword in JavaScript */}
                 <iframe className="embed-responsive-item" src={videoUrl} allowFullScreen></iframe>
             </div>
             {/* JSX curly braces (see below) are how we inject JavaScript values, call built-in methods or
-            custom methods, map through arrays, evaluate conditionals via ternaries/short-circuit operators, etc */}
+            our own custom methods, map through arrays, evaluate conditionals via ternaries/short-circuit 
+            operators, etc */}
             <h2>{video.snippet.title}</h2>
             <p>{video.snippet.description}</p>
         </>
